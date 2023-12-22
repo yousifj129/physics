@@ -5,7 +5,7 @@ massearth = 5.972e24
 radiusearth = 6371000
 x = [0,radiusearth,5,10]
 xv = [1,0,5,1]
-
+#cot function (its not available in the math library)
 def cot(theta):
     tangent_value = math.tan(theta)
     
