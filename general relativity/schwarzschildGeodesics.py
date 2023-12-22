@@ -14,6 +14,9 @@ def cot(theta):
         return 0
     
     return 1 / tangent_value
+
+
+#function to solve the christoffel equation
 def solveChristoffel(xcord, xvel , M , G , c):
     
     
