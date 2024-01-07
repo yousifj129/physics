@@ -1,10 +1,9 @@
-import torch
 import math
-import string
+
 massearth = 5.972e24
 radiusearth = 6371000
-x = [0,radiusearth,5,10]
-xv = [1,0,5,1]
+x = [0,radiusearth,0,0]
+xv = [1,0,0,0]
 #cot function (its not available in the math library)
 def cot(theta):
     tangent_value = math.tan(theta)
@@ -44,6 +43,8 @@ def solveChristoffel(xcord, xvel , M , G , c):
 
 G = 6.6743e-11
 c = 299792458
+
+solveChristoffel(x,xv, massearth, G,c)
 for i in range(10):
     accelerations = solveChristoffel(x,xv,massearth, G,c)
     x[0] = x[0] + xv[0] * xv[0] + 0.5 * accelerations[0] * xv[0]**2
