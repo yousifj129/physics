@@ -4,9 +4,9 @@ import numpy as np
 import math
 
 a = 0.5291 * (10 ** -10)
-l = 1
-m = 1
-n = 2
+l = 0
+m = 0
+n = 1
 r = np.linspace(0, 4, 4)
 phi = np.linspace(0, 2 * math.pi, 100)
 
