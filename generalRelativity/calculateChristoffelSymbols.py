@@ -10,15 +10,21 @@ n = 4
 x = sp.symbols('t r theta phi')
 G, c, M = sp.symbols('G c M')
 r, theta, phi = sp.symbols('r theta phi')
-
+k, rho = sp.symbols('k rho')
 # Define the covariant metric tensor using the Schwarzschild metric
-covariant_metric = sp.Matrix([
-    [-(1 - (2 * G * M) / (c ** 2 * r)), 0, 0, 0],
-    [0, 1 / (1 - (2 * G * M) / (c ** 2 * r)), 0, 0],
-    [0, 0, r ** 2, 0],
-    [0, 0, 0, r ** 2 * sp.sin(theta) ** 2]
-])
+# covariant_metric = sp.Matrix([
+#     [-(1 - (2 * G * M) / (c ** 2 * r)), 0, 0, 0],
+#     [0, 1 / (1 - (2 * G * M) / (c ** 2 * r)), 0, 0],
+#     [0, 0, r ** 2, 0],
+#     [0, 0, 0, r ** 2 * sp.sin(theta) ** 2]
+# ])
 
+covariant_metric = sp.Matrix([
+    [-1, 0, 0, 0],
+    [0, (1-(2*k*rho)/(c**2*r)), 0, 0],
+    [0, 0, r**2, 0],
+    [0, 0, 0,  r**2*sp.sin(theta)**2]
+])
 # Compute the contravariant metric tensor from the covariant metric tensor.
 contravariant_metric = covariant_metric.inv()
 
@@ -53,4 +59,5 @@ for i, j, k in product(range(n), repeat=3):
 for i in range(n):
     print(f"Christoffel Symbols for Dimension {x[i]}:")
     display(christoffel_symbols[i])
+    
     print()

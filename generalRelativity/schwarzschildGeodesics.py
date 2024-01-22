@@ -47,10 +47,10 @@ c = 299792458
 solveChristoffel(x,xv, massearth, G,c)
 for i in range(10):
     accelerations = solveChristoffel(x,xv,massearth, G,c)
-    x[0] = x[0] + xv[0] * xv[0] + 0.5 * accelerations[0] * xv[0]**2
-    x[1] = x[1] + xv[1] * xv[0] + 0.5 * accelerations[1] * xv[0]**2
-    x[2] = x[2] + xv[2] * xv[0] + 0.5 * accelerations[2] * xv[0]**2
-    x[3] = x[3] + xv[3] * xv[0] + 0.5 * accelerations[3] * xv[0]**2
+    x[0] = x[0] + (xv[0] * xv[0]) + (0.5 * accelerations[0] * xv[0]**2)
+    x[1] = x[1] + (xv[1] * xv[0]) + (0.5 * accelerations[1] * xv[0]**2)
+    x[2] = x[2] + (xv[2] * xv[0]) + (0.5 * accelerations[2] * xv[0]**2)
+    x[3] = x[3] + (xv[3] * xv[0]) + (0.5 * accelerations[3] * xv[0]**2)
 
     stf = ("pos time = " + str(x[0]) 
            + "     pos R = " + str(x[1]) 
