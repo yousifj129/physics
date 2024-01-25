@@ -21,7 +21,7 @@ def build_collatz_tree(n):
 
 def draw_collatz_conjecture_tree(n):
     tree = build_collatz_tree(n)
-    pos = nx.shell_layout(tree)  # Layout algorithm for tree visualization
+    pos = nx.spiral_layout(tree)  # Layout algorithm for tree visualization
 
     plt.figure(figsize=(12, 8))
     nx.draw(tree, pos, with_labels=True, node_size=500, node_color='lightblue', font_size=10, arrows=True)
@@ -30,4 +30,4 @@ def draw_collatz_conjecture_tree(n):
     plt.show()
 
 # Example usage:
-draw_collatz_conjecture_tree(100)
+draw_collatz_conjecture_tree(27)
