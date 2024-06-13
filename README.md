@@ -1,5 +1,5 @@
 # physics
  some physics
 ```math
-e^{i\pi} + 1 = 0
+g_{\mu\nu} = e_\mu \cdot \e_nu
 ```
